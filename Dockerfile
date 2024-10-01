@@ -1,5 +1,5 @@
 FROM python:3.10
-EXPOSE 8000
+EXPOSE 5300
 WORKDIR /app
 
 RUN apt update
@@ -14,4 +14,4 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY app.py .
-CMD ["flask", "run", "--host", "0.0.0.0"]
+CMD ["flask", "run", "--host", "0.0.0.0", "--port", "5300"]

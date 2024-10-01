@@ -1,11 +1,9 @@
-from fastapi import FastAPI
+import flask
+app = flask.Flask(__name__)
 
-app = FastAPI()
-
-
-@app.get("/")
-async def root():
-    return {
-            "Nombre": "Mario Arias",
-            "Matricula": "21760701"
-            }
+@app.route('/')
+def home():
+    return '''
+        Nombre: Mario De Jesus Arias Hernandez<br>
+        Matricula: 21760701
+    '''
